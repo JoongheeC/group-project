@@ -177,6 +177,7 @@ async function fetchNaverReviewSignals(productName) {
   const url = new URL(NAVER_VIEW_SEARCH_URL);
   url.searchParams.set('where', 'view');
   url.searchParams.set('query', query);
+  const searchUrl = url.toString();
 
   const html = await fetchTextWithHttps(url, {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
@@ -203,6 +204,7 @@ async function fetchNaverReviewSignals(productName) {
     positiveCount: positiveMatches.length,
     negativeCount: negativeMatches.length,
     summary,
+    searchUrl,
   };
 
   reviewCache.set(productName, {
