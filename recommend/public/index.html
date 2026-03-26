@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Convenience Pairing Guide</title>
+    <title>오늘의 안주를 찾아라</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -14,24 +14,7 @@
       <header class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Convenience Event Goods Explorer</p>
-          <h1>술, 기분, 날씨를 넣으면 오늘 어울리는 안주를 골라줍니다.</h1>
-          <p class="hero-text">
-            GS25와 이마트24 행사상품 전체 목록을 함께 불러오고, 검색도 가능하게 만들었습니다. 아래에서 상품을 직접 찾거나 오늘 상황에 맞는 안주를 추천받을 수 있습니다.
-          </p>
-        </div>
-        <div class="hero-panel">
-          <div class="mini-stat">
-            <span>데이터 출처</span>
-            <strong>GS25 + 이마트24</strong>
-          </div>
-          <div class="mini-stat">
-            <span>추천 기준</span>
-            <strong>술 · 기분 · 날씨</strong>
-          </div>
-          <div class="mini-stat">
-            <span>사용 방식</span>
-            <strong>전체 목록 + 검색 + 추천</strong>
-          </div>
+          <h1>오늘의 편의점 안주를 찾아라</h1>
         </div>
       </header>
 
@@ -57,6 +40,7 @@
               <select name="drink">
                 <option value="beer">맥주</option>
                 <option value="soju">소주</option>
+                <option value="gaoliang">고량주</option>
                 <option value="highball">하이볼</option>
                 <option value="wine">와인</option>
               </select>
@@ -66,7 +50,7 @@
               <span>오늘 기분</span>
               <select name="mood">
                 <option value="good">기분 좋음</option>
-                <option value="cozy">차분하고 포근함</option>
+                <option value="cozy">차분함</option>
                 <option value="stressed">스트레스 풀고 싶음</option>
                 <option value="tired">피곤함</option>
               </select>
@@ -76,6 +60,7 @@
               <span>날씨</span>
               <select name="weather">
                 <option value="sunny">맑음</option>
+                <option value="snowy">눈</option>
                 <option value="rainy">비</option>
                 <option value="cold">쌀쌀함</option>
                 <option value="hot">더움</option>
@@ -83,7 +68,7 @@
             </label>
 
             <label class="toggle-row">
-              <input type="checkbox" name="includeReviews" value="1" checked />
+              <input type="checkbox" name="includeReviews" value="1" />
               <span>네이버 블로그 리뷰 점수 반영</span>
             </label>
 

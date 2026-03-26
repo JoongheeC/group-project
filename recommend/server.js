@@ -515,6 +515,13 @@ function scoreProduct(product, context) {
     if (tagSet.has('spicy')) score += 2;
   }
 
+  if (drink === 'gaoliang') {
+    if (tagSet.has('soju-friendly')) score += 4;
+    if (tagSet.has('spicy')) score += 4;
+    if (tagSet.has('smoky')) score += 3;
+    if (tagSet.has('hearty')) score += 2;
+  }
+
   if (drink === 'highball') {
     if (tagSet.has('highball-friendly')) score += 5;
     if (tagSet.has('light')) score += 3;
@@ -556,6 +563,12 @@ function scoreProduct(product, context) {
   if (weather === 'rainy') {
     if (tagSet.has('hot-snack')) score += 4;
     if (tagSet.has('hearty')) score += 2;
+  }
+
+  if (weather === 'snowy') {
+    if (tagSet.has('hot-snack')) score += 5;
+    if (tagSet.has('hearty')) score += 4;
+    if (tagSet.has('spicy')) score += 2;
   }
 
   if (weather === 'cold') {

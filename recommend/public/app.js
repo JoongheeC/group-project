@@ -49,7 +49,7 @@ function createCard({ name, eventType, price, reasons = [], review = null, sourc
   }
 
   if (reasons.length === 0) {
-    reasonList.innerHTML = '<li>행사상품 목록에서 확인된 상품입니다.</li>';
+    reasonList.remove();
   } else {
     reasonList.innerHTML = reasons.map((reason) => `<li>${reason}</li>`).join('');
   }
@@ -119,6 +119,7 @@ function labelForDrink(value) {
   return {
     beer: '맥주',
     soju: '소주',
+    gaoliang: '고량주',
     highball: '하이볼',
     wine: '와인',
   }[value] || value;
@@ -127,7 +128,7 @@ function labelForDrink(value) {
 function labelForMood(value) {
   return {
     good: '기분 좋음',
-    cozy: '차분하고 포근함',
+    cozy: '차분함',
     stressed: '스트레스 풀고 싶음',
     tired: '피곤함',
   }[value] || value;
@@ -136,6 +137,7 @@ function labelForMood(value) {
 function labelForWeather(value) {
   return {
     sunny: '맑음',
+    snowy: '눈',
     rainy: '비',
     cold: '쌀쌀함',
     hot: '더움',
@@ -185,9 +187,7 @@ nextPageButton.addEventListener('click', async () => {
   }
 });
 
-loadRecommendations(new FormData(recommendationForm)).catch((error) => {
-  recommendationSummary.textContent = error.message;
-});
+recommendationSummary.textContent = '항목을 고른 뒤 추천 받기 버튼을 눌러주세요.';
 
 loadProducts().catch((error) => {
   productsMeta.textContent = error.message;
