@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 안주를 찾아라</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Convenience Event Goods Explorer</p>
+          <h1>오늘의 편의점 안주를 찾아라</h1>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel form-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Pairing Finder</p>
+            <h2>오늘의 안주 추천</h2>
+          </div>
+
+          <form id="recommendation-form" class="recommendation-form">
+            <label>
+              <span>편의점</span>
+              <select name="source">
+                <option value="all">전체</option>
+                <option value="gs25">GS25</option>
+                <option value="emart24">이마트24</option>
+              </select>
+            </label>
+
+            <label>
+              <span>술</span>
+              <select name="drink">
+                <option value="beer">맥주</option>
+                <option value="soju">소주</option>
+                <option value="gaoliang">고량주</option>
+                <option value="highball">하이볼</option>
+                <option value="wine">와인</option>
+              </select>
+            </label>
+
+            <label>
+              <span>오늘 기분</span>
+              <select name="mood">
+                <option value="good">기분 좋음</option>
+                <option value="cozy">차분함</option>
+                <option value="stressed">스트레스 풀고 싶음</option>
+                <option value="tired">피곤함</option>
+              </select>
+            </label>
+
+            <label>
+              <span>날씨</span>
+              <select name="weather">
+                <option value="sunny">맑음</option>
+                <option value="snowy">눈</option>
+                <option value="rainy">비</option>
+                <option value="cold">쌀쌀함</option>
+                <option value="hot">더움</option>
+              </select>
+            </label>
+
+            <label class="toggle-row">
+              <input type="checkbox" name="includeReviews" value="1" />
+              <span>네이버 블로그 리뷰 점수 반영</span>
+            </label>
+
+            <button type="submit" class="primary-button">추천 받기</button>
+          </form>
+
+          <div id="recommendation-summary" class="context-chip"></div>
+          <div id="recommendation-results" class="card-grid"></div>
+        </section>
+
+        <section class="panel products-panel">
+          <div class="panel-heading row-between">
+            <div>
+              <p class="eyebrow">Catalog Browser</p>
+                <h2>전체 상품 리스트</h2>
+            </div>
+            <form id="search-form" class="search-form">
+              <select id="source-filter" name="source">
+                <option value="all">전체</option>
+                <option value="gs25">GS25</option>
+                <option value="emart24">이마트24</option>
+              </select>
+              <input id="search-input" name="query" type="search" placeholder="상품명을 검색해보세요" />
+              <button type="submit" class="secondary-button">검색</button>
+            </form>
+          </div>
+
+          <div id="products-meta" class="products-meta"></div>
+          <div id="products-list" class="product-list"></div>
+          <div class="pagination-bar">
+            <button id="prev-page" class="ghost-button">이전</button>
+            <span id="page-status"></span>
+            <button id="next-page" class="ghost-button">다음</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="product-card-template">
+      <article class="product-card">
+        <div class="product-card__head">
+          <h3></h3>
+          <span class="badge"></span>
+        </div>
+        <div class="product-card__meta"></div>
+        <ul class="reason-list"></ul>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
