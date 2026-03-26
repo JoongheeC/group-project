@@ -1,18 +1,18 @@
 :root {
-  --bg: #fffaf0;
-  --bg-2: #ffe6f3;
-  --panel: rgba(255, 255, 255, 0.72);
-  --panel-strong: rgba(255, 255, 255, 0.88);
-  --ink: #18131f;
-  --muted: #685f78;
-  --line: rgba(54, 33, 88, 0.12);
-  --accent: #ff5e7e;
-  --accent-strong: #ff7a00;
-  --accent-2: #14c7b7;
-  --accent-3: #705dff;
-  --accent-4: #ffe45c;
-  --shadow: 0 20px 60px rgba(77, 40, 131, 0.16);
-  --shadow-soft: 0 10px 30px rgba(77, 40, 131, 0.09);
+  --bg: #fff9f3;
+  --bg-2: #ffe7f1;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.92);
+  --ink: #2c2238;
+  --muted: #7b6d8f;
+  --line: rgba(145, 111, 192, 0.14);
+  --accent: #ff7da5;
+  --accent-strong: #ffb44d;
+  --accent-2: #7be0d0;
+  --accent-3: #8b7cff;
+  --accent-4: #ffe37b;
+  --shadow: 0 24px 60px rgba(151, 110, 194, 0.18);
+  --shadow-soft: 0 12px 28px rgba(151, 110, 194, 0.12);
 }
 
 * {
@@ -25,10 +25,10 @@ body {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
   background:
-    radial-gradient(circle at 12% 12%, rgba(255, 122, 0, 0.24), transparent 18%),
-    radial-gradient(circle at 84% 18%, rgba(112, 93, 255, 0.26), transparent 20%),
-    radial-gradient(circle at 72% 78%, rgba(20, 199, 183, 0.2), transparent 18%),
-    linear-gradient(135deg, #fff8df 0%, #ffe8ef 42%, #eef7ff 100%);
+    radial-gradient(circle at 10% 14%, rgba(255, 193, 118, 0.42), transparent 20%),
+    radial-gradient(circle at 86% 16%, rgba(168, 150, 255, 0.3), transparent 22%),
+    radial-gradient(circle at 72% 82%, rgba(123, 224, 208, 0.24), transparent 18%),
+    linear-gradient(135deg, #fff8ea 0%, #ffe7f0 48%, #eef8ff 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -39,12 +39,12 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 10% 18%, rgba(255, 94, 126, 0.12) 0 70px, transparent 72px),
-    radial-gradient(circle at 88% 10%, rgba(255, 228, 92, 0.2) 0 90px, transparent 92px),
-    radial-gradient(circle at 20% 88%, rgba(20, 199, 183, 0.14) 0 80px, transparent 82px),
-    linear-gradient(rgba(90, 76, 121, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(90, 76, 121, 0.05) 1px, transparent 1px);
-  background-size: auto, auto, auto, 26px 26px, 26px 26px;
+    radial-gradient(circle at 10% 18%, rgba(255, 138, 171, 0.15) 0 70px, transparent 72px),
+    radial-gradient(circle at 88% 10%, rgba(255, 228, 123, 0.22) 0 90px, transparent 92px),
+    radial-gradient(circle at 20% 88%, rgba(123, 224, 208, 0.16) 0 80px, transparent 82px),
+    linear-gradient(rgba(171, 143, 211, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(171, 143, 211, 0.07) 1px, transparent 1px);
+  background-size: auto, auto, auto, 24px 24px, 24px 24px;
   mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
 }
 
@@ -56,14 +56,14 @@ body::after {
   z-index: 0;
   padding: 10px 16px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent-4), #fff6a1);
-  color: #7a2d00;
+  background: linear-gradient(135deg, #fff1a0, #ffd86b);
+  color: #8a5d00;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  box-shadow: 0 14px 28px rgba(255, 122, 0, 0.18);
-  transform: rotate(8deg);
+  box-shadow: 0 14px 28px rgba(255, 180, 77, 0.24);
+  transform: rotate(9deg);
 }
 
 .page-shell {
@@ -95,6 +95,14 @@ body::after {
   padding: 34px;
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82)),
+    radial-gradient(circle at top left, rgba(255, 225, 128, 0.16), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(139, 124, 255, 0.14), transparent 30%);
 }
 
 .hero-copy::after {
@@ -103,9 +111,9 @@ body::after {
   top: 22px;
   right: 26px;
   padding: 10px 14px;
-  border: 2px solid rgba(24, 19, 31, 0.1);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.64);
+  border: 2px solid rgba(255, 157, 191, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
   color: var(--accent-3);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.76rem;
@@ -137,14 +145,79 @@ body::after {
   max-width: none;
   white-space: nowrap;
   text-wrap: balance;
+  text-shadow: 0 4px 0 rgba(255, 255, 255, 0.7);
 }
 
 .hero-text {
   margin: 20px 0 0;
-  max-width: 54ch;
+  max-width: 42ch;
   line-height: 1.75;
   color: var(--muted);
   font-size: 1rem;
+}
+
+.hero-copy__text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-chips span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #7e5ea6;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(139, 124, 255, 0.14), 0 8px 18px rgba(151, 110, 194, 0.08);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+}
+
+.hero-visual__image {
+  width: min(100%, 280px);
+  height: auto;
+  filter: drop-shadow(0 18px 24px rgba(148, 108, 193, 0.18));
+}
+
+.hero-bubble,
+.hero-sticker {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #7a5f9d;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(151, 110, 194, 0.12);
+}
+
+.hero-bubble {
+  left: 10px;
+  bottom: 18px;
+}
+
+.hero-sticker--top {
+  right: 0;
+  top: 22px;
+  background: linear-gradient(135deg, #ffe79a, #ffd1e3);
+  color: #8d5a6f;
+  transform: rotate(-10deg);
 }
 
 .hero-panel {
@@ -200,6 +273,9 @@ body::after {
   padding: 28px;
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82)),
+    radial-gradient(circle at top right, rgba(255, 227, 123, 0.12), transparent 26%);
 }
 
 .panel::before {
@@ -209,7 +285,7 @@ body::after {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(112, 93, 255, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 157, 191, 0.12), transparent 70%);
   pointer-events: none;
 }
 
@@ -279,8 +355,8 @@ body::after {
   width: 100%;
   padding: 15px 18px;
   border-radius: 18px;
-  border: 1px solid rgba(91, 63, 145, 0.14);
-  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(191, 155, 230, 0.22);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--ink);
   font: inherit;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -289,7 +365,7 @@ body::after {
 .recommendation-form select:focus,
 .search-form input:focus,
 .search-form select:focus {
-  outline: 2px solid rgba(112, 93, 255, 0.28);
+  outline: 2px solid rgba(255, 125, 165, 0.26);
   outline-offset: 2px;
 }
 
@@ -317,17 +393,17 @@ button:hover {
 
 .primary-button {
   color: white;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  background: linear-gradient(135deg, #ff96ba, #ffb44d);
 }
 
 .secondary-button {
   color: white;
-  background: linear-gradient(135deg, var(--accent-3), #4ea3ff);
+  background: linear-gradient(135deg, #8f83ff, #6bc7ff);
 }
 
 .ghost-button {
-  border: 1px solid rgba(84, 60, 134, 0.14);
-  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(191, 155, 230, 0.2);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .ghost-button:disabled {
@@ -365,9 +441,9 @@ button:hover {
   padding: 20px;
   border-radius: 26px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82)),
-    linear-gradient(135deg, rgba(255, 94, 126, 0.08), rgba(112, 93, 255, 0.08));
-  border: 1px solid rgba(84, 60, 134, 0.1);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86)),
+    linear-gradient(135deg, rgba(255, 155, 178, 0.12), rgba(139, 124, 255, 0.08));
+  border: 1px solid rgba(191, 155, 230, 0.18);
   box-shadow: var(--shadow-soft);
   animation: reveal 320ms ease;
   position: relative;
@@ -403,8 +479,8 @@ button:hover {
   white-space: nowrap;
   padding: 7px 11px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 94, 126, 0.16), rgba(255, 122, 0, 0.16));
-  color: #d44563;
+  background: linear-gradient(135deg, rgba(255, 153, 187, 0.24), rgba(255, 224, 124, 0.3));
+  color: #c75272;
   font-size: 0.8rem;
   font-weight: 700;
   box-shadow: inset 0 0 0 1px rgba(255, 94, 126, 0.08);
@@ -422,27 +498,53 @@ button:hover {
 }
 
 .source-badge--gs25 {
-  background: rgba(20, 199, 183, 0.14);
-  border-color: rgba(20, 199, 183, 0.28);
-  color: #007f73;
+  background: rgba(123, 224, 208, 0.2);
+  border-color: rgba(123, 224, 208, 0.32);
+  color: #21897b;
 }
 
 .source-badge--emart24 {
-  background: rgba(112, 93, 255, 0.12);
-  border-color: rgba(112, 93, 255, 0.22);
-  color: #5543db;
+  background: rgba(139, 124, 255, 0.14);
+  border-color: rgba(139, 124, 255, 0.24);
+  color: #6754e6;
 }
 
 .product-card__meta {
   margin-top: 10px;
   font-size: 0.94rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-card__price {
+  color: var(--ink);
 }
 
 .product-card__submeta {
   margin-top: 8px;
   font-size: 0.84rem;
   color: var(--muted);
+}
+
+.review-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff0a8, #ffd86f);
+  color: #8a5d00;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(194, 145, 17, 0.18);
+}
+
+.review-link:hover {
+  background: linear-gradient(135deg, #ffe793, #ffcf57);
 }
 
 .reason-list {
@@ -498,6 +600,14 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
+  .hero-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 180px;
+  }
+
   .products-panel .panel-heading h2 {
     white-space: normal;
   }
@@ -548,6 +658,16 @@ button:hover {
     font-size: 2.5rem;
     max-width: none;
     white-space: normal;
+  }
+
+  .hero-bubble {
+    left: 0;
+    bottom: 0;
+  }
+
+  .hero-sticker--top {
+    top: 4px;
+    right: 10px;
   }
 
   .search-form {

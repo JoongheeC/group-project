@@ -33,18 +33,31 @@ function createCard({ name, eventType, price, reasons = [], review = null, sourc
   const reasonList = fragment.querySelector('.reason-list');
   const submeta = document.createElement('div');
   const sourceBadge = document.createElement('span');
+  const priceText = document.createElement('span');
+  const reviewLink = document.createElement('a');
 
   submeta.className = 'product-card__submeta';
   sourceBadge.className = `source-badge source-badge--${source}`;
   sourceBadge.textContent = sourceLabel(source);
+  priceText.className = 'product-card__price';
+  priceText.textContent = `${currency(price)}`;
+  reviewLink.className = 'review-link';
+  reviewLink.textContent = '블로그 후기 보기';
+  reviewLink.target = '_blank';
+  reviewLink.rel = 'noreferrer noopener';
 
   title.textContent = name;
   badge.textContent = eventType;
-  meta.textContent = `${currency(price)}`;
-  meta.prepend(sourceBadge);
+  meta.replaceChildren(sourceBadge, priceText);
 
   if (review) {
     submeta.textContent = `네이버 블로그 리뷰 점수 ${review.score.toFixed(1)} / 10 · 블로그 신호 ${review.blogMentions}회`;
+
+    if (review.searchUrl) {
+      reviewLink.href = review.searchUrl;
+      meta.append(reviewLink);
+    }
+
     meta.after(submeta);
   }
 
