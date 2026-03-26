@@ -1,0 +1,10 @@
+{
+  "name": "gs25-pairing-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GS25 event goods browser and pairing recommendation app",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}
